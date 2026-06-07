@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+/*
+  PyQuest theme — warm, friendly, encouraging.
+  Tailwind v4 reads design tokens from the @theme block; these generate
+  utilities like bg-brand, text-ink, etc.
+*/
+@theme {
+  --color-brand: #58cc02;          /* cheerful green */
+  --color-brand-dark: #46a302;
+  --color-brand-light: #d7ffb8;
+  --color-gold: #ffc800;
+  --color-streak: #ff9600;
+  --color-ink: #3c3c3c;
+  --color-ink-soft: #777777;
+  --color-cloud: #f7f7f9;
+  --color-locked: #e5e5e5;
+  --color-sky: #1cb0f6;
+
+  --font-display: 'Nunito', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cloud text-ink antialiased;
+    font-family: var(--font-display);
+    overscroll-behavior-y: none;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-locked rounded-full;
+  }
+}
+
+/* A reusable "pushable" 3D button — the signature gamified control. */
+@layer components {
+  .btn-3d {
+    @apply relative font-extrabold rounded-2xl text-white select-none
+           transition-all active:translate-y-[2px];
+    box-shadow: 0 4px 0 0 var(--shadow-color, #000);
+  }
+  .btn-3d:active {
+    box-shadow: 0 2px 0 0 var(--shadow-color, #000);
+  }
+  .btn-3d:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/nunito/v26/XRXV3I6Li01BKofINeaB.woff2')
+    format('woff2');
+}
