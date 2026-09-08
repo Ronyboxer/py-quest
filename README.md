@@ -1,6 +1,6 @@
 # PyQuest
 
-[![CI](https://github.com/Ronyboxer/py-quest/actions/workflows/ci.yml/badge.svg)](https://github.com/Ronyboxer/py-quest/actions/workflows/ci.yml)
+[![CI](https://github.com/ronakrupani/py-quest/actions/workflows/ci.yml/badge.svg)](https://github.com/ronakrupani/py-quest/actions/workflows/ci.yml)
 
 Learn Python in the browser. Bite-sized lessons and coding challenges where
 your code actually runs, no backend involved.
