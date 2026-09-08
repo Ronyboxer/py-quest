@@ -79,9 +79,10 @@ Units progress: **1** print/vars → **2** numbers/strings → **3** logic →
 
 ## Tests
 
-Two test layers, both runnable from npm:
+Three layers, from fastest to slowest:
 
 ```bash
+npm test           # unit tests (Vitest + jsdom). Under a second, no network.
 npm run validate   # runs a reference solution for EVERY challenge through the
                    # real Python harness (Node + Pyodide) and asserts all
                    # test cases pass, catches a bad expected value instantly.
@@ -90,6 +91,12 @@ npm run smoke      # full browser E2E (Playwright + system Chrome): mounts the
                    # challenge, and asserts XP persisted to localStorage.
                    # Requires the dev server running on :5188.
 ```
+
+The unit suite covers XP and streak rules, localStorage round-trips, the
+curriculum's structural invariants, unlock progression, and that the level map
+renders. Pyodide is mocked there, so it needs no interpreter download. CI runs
+lint, build, and `npm test` only; the other two need a real Pyodide or a real
+browser.
 
 ## Tradeoffs and known limits
 
