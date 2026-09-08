@@ -7,6 +7,8 @@ your code actually runs, no backend involved.
 
 Live: https://py-quest-gamma.vercel.app
 
+![The level map](assets/screenshot.png)
+
 Execution runs on Pyodide, which is CPython compiled to WebAssembly, so the
 interpreter is the real thing rather than a simulation. There is no server.
 Progress, XP, and the daily streak live in `localStorage`.
